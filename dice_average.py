@@ -1,16 +1,17 @@
 import random
-kaisuu = [10, 100, 1000, 10000, 1000000] # 平均値用のリスト
+
+kaisuu = [10, 100, 1000, 10000, 1000000]  # 試行回数リスト
 
 def roll_average(trial):
-    average = 0 # 平均値の初期化
-    total = 0 # サイコロの出目の合計値を記録する変数
-    for n in range(trial): # trial分だけループ処理
-        pass # この部分に具体的な処理を書く
-    return average # 関数の戻り値は平均値
+    total = 0  # サイコロの出目の合計値
+    for n in range(trial):
+        total += random.randint(1, 6)  # サイコロを1回振って出目を合計に足す
+    average = total / trial  # 平均を計算
+    return average  # 平均値を返す
 
-# リスト[kaisuu]までの平均値を求める処理
+# 各試行回数ごとの平均値を表示
 for i in kaisuu:
-    print(str(i)+"回試行の平均値："+str(roll_average(i)))
+    print(str(i) + "回試行の平均値：" + str(roll_average(i)))
 
 # 期待される実行結果例
 """ 
