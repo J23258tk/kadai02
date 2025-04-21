@@ -1,8 +1,14 @@
 import random
 
+results = [] # 出た目を保存する空のリストを用意
+
 for i in range(10):
     x = random.randint(1,6)
+    results.append(x)  #出た数字をリストに追加
     print(str(i+1)+"回目："+str(x))
+
+average = sum(results) / len(results) # 出目の合計を回数で割って平均を求める
+print("平均値：" + str(average))
 
 # 期待される出力結果例
 """
